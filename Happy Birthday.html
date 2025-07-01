@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Purple Lotus</title>
+    <style>
+        body {
+            margin: 0;
+            background: url('Birthday collage.png') no-repeat center center fixed;
+            background-size: contain;
+            background-color: maroon;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 0%;
+            overflow: hidden;
+        }
+
+        .side-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20vw; /* Use viewport width for dynamic sizing */
+    max-height: 80vh;
+    overflow-y: auto;
+    font-size: 1.1em;
+    text-align: justify;
+    padding: 10px;
+    border-radius: 10px;
+    line-height: 1.5;
+}
+        .side-text.left {
+            left: 20px;
+        }
+
+        .side-text.right {
+            right: 30px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        #message {
+            font-size: 1.5em;
+            width: 80%;
+            margin: 0 auto;
+            max-width: 600px;
+
+        }
+
+        #heart-container {
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: floatUp 10s ease-out forwards;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100%{
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+
+        #heartBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: crimson;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        #heartBtn:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <button id= "heartBtn" onclick="createHeart()">Click Me </button>
+    <div id="heart-container"></div>
+    <h1>Happy Birthday Hussaina!!!!</h1>
+    <p id="message"></p>
+
+    <div class="side-text left">
+        <p>Each photo on this page represents how i see you. A book lover, the roses stand for i wont tell, the porsche stand for how successful you will be in the future.In Sha Allah just one of your cars, the cake stands for foodie. The crown stands for the queen you are. Deserving nothing less than QUEEN treatment and not the bare minimum. This is my gift to you as you keep putting yourself out there and chasing your dreams whatever they may be.
+           The purple aesthetic represents the things that I think you like. This was not what i had in mind as a present for you this year but that does not mean today is the only day i can celebrate and appreciate you. I appreciate you everyday and i will celebrate you every chance i get no matter the circumstances no matter the day. As you keep growing and exploring the world I am so grateful for being a part of your life and seeing you become what you are meant to be.
+           Sorry if it's too long I have a lot to say🤣😂. I also do hope the picture in the middle does not make you not like it. If you don't want it in here then please inform me and i will change it. 
+        </p>
+    </div>
+
+    <div class="side-text right">
+         <p>As much as i hate nights, you are the reason why i look forward to them. Our very long TikTok conversations that i on somedays wish they never end. Your laugh whhich weirdly brings a smile to my face everytime i hear it. Your friendship which is also a true friendship that i pray never stops growing in whatever way it maybe and no matter the circumstances between us. The memorable times where i was invloved in a part of your life that will never be forgotten. The memories that were captured and the ones that will never be forgotten. The laughs we shared, the times we did not talk for days which i think only happened twice.
+            My unwavering love and respect for you keeps growing as we all do and today is one of the days I get to show them to you in any way i can. I hope you like this. I am grateful for all the memories we have made together and for the memories we will make together in future because i will stop at nothing to make more memories with you. HAPPY BIRTHDAY once again and i hope today is a part of the days you will never forget. if you feel down or unloved or unappreciated or not cherished This
+            is yours and yours alone and you can always comeback to it and remind yourelf that you are loved, appreciated and cherished by me wherever I am.  
+         </p>
+
+    </div>
+
+    <script>
+        const text = "";
+        const messageE1 = document.getElementById("message");
+        let index = 0;
+
+        function typeWriter() {
+            if(index < text.length) {
+                messageE1.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+
+        function createHeart() {
+    const container = document.getElementById("heart-container");
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "❤";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 20) + "px";
+    heart.style.top = "100%";
+
+    container.appendChild(heart);
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+}
+
+    </script>
+</body>
+</html>
