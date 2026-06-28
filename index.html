@@ -8,10 +8,10 @@
         body {
             margin: 0;
             background: url('aesthetic.png') no-repeat center center fixed;
-            background-size: contain;
+            background-size: 500px auto ;
             background-color: purple;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: white;
+            color: rgb(206, 212, 247);
             text-align: center;
             padding-top: 0%;
             overflow: hidden;
@@ -97,30 +97,144 @@
 
         #heartBtn:hover {
             background: rgb(255, 240, 104);
-        }
+    }
+      /* ===== Carousel Slideshow ADDITION ===== */
+.carousel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(800px, 90vw);
+    height: 420px;
+    perspective: 1200px;
+    z-index: 2;
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 0.6s ease;
+    transform-style: preserve-3d;
+    opacity: 0;
+}
+
+.slide.active {
+    transform: translate(-50%, -50%) scale(1) translateZ(200px);
+    opacity: 1;
+    z-index: 5;
+}
+
+.slide.left {
+    transform: translate(-130%, -50%) scale(0.8) rotateY(40deg);
+    opacity: 0.6;
+    z-index: 3;
+}
+
+.slide.right {
+    transform: translate(30%, -50%) scale(0.8) rotateY(-40deg);
+    opacity: 0.6;
+    z-index: 3;
+}
+
+.slide.hidden {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    z-index: 1;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.nav.left { left: -20px; }
+.nav.right { right: -20px; }
+/* ===== End Carousel ===== */
     </style>
 </head>
 <body>
 
     <button id= "heartBtn" onclick="createHeart()">Click Me </button>
     <div id="heart-container"></div>
-    <h1>Happy Birthday Hussaina!!!!</h1>
     <p id="message"></p>
 
     <div class="side-text left">
-        <p>Each photo on this page represents how i see you. A book lover, the roses stand for i wont tell, the porsche stand for how successful you will be in the future.In Sha Allah just one of your cars, the cake stands for foodie. The crown stands for the queen you are. Deserving nothing less than QUEEN treatment and not the bare minimum. This is my gift to you as you keep putting yourself out there and chasing your dreams whatever they may be.
-           The purple aesthetic represents the things that I think you like. This was not what i had in mind as a present for you this year but that does not mean today is the only day i can celebrate and appreciate you. I appreciate you everyday and i will celebrate you every chance i get no matter the circumstances no matter the day. As you keep growing and exploring the world I am so grateful for being a part of your life and seeing you become what you are meant to be.
-           Sorry if it's too long I have a lot to say🤣😂. I also do hope the picture in the middle does not make you not like it. If you don't want it in here then please inform me and i will change it. 
+        <p> <h2>HUSSAINA @ 20
+        </h2> Life happens to all of us. Some good some bad and some worse than others.
+        Those good and bad moments are what make us who we are today. They bring people into our lives.
+         People who eiher elevate or ruin us. Some moments will be remembered as moments of growth, joy, sadness or change.
+         Some are captured and never forgotten. Some are remembered but they are all moments of growth.
+         These picturs are here to show you how much you have overcome and how far you have gone in life.
+            From primary days in essence to secondary days till date. They make up some of the moments worth living for and worth remembering.
+            20 years of life is meant to be cherished and never forgotten. It is a new chapter.
         </p>
     </div>
 
     <div class="side-text right">
-         <p>As much as i hate nights, you are the reason why i look forward to them. Our very long TikTok conversations that i on somedays wish they never end. Your laugh whhich weirdly brings a smile to my face everytime i hear it. Your friendship which is also a true friendship that i pray never stops growing in whatever way it maybe and no matter the circumstances between us. The memorable times where i was invloved in a part of your life that will never be forgotten. The memories that were captured and the ones that will never be forgotten. The laughs we shared, the times we did not talk for days which i think only happened twice.
-            My unwavering love and respect for you keeps growing as we all do and today is one of the days I get to show them to you in any way i can. I hope you like this. I am grateful for all the memories we have made together and for the memories we will make together in future because i will stop at nothing to make more memories with you. HAPPY BIRTHDAY once again and i hope today is a part of the days you will never forget. if you feel down or unloved or unappreciated or not cherished This
-            is yours and yours alone and you can always comeback to it and remind yourelf that you are loved, appreciated and cherished by me wherever I am.  
+         <p> <h3>HAPPY BIRTHDAY</h3>
+            You are cherished, wanted, loved, celebrated and so much more. Every moment you have gone through, spent living is an achievement.
+            Many people have not been able to attain that and that makes you strong. So to this new age of yours we move forwards because i am with you.
+            You will become better that you were years ago, months ago, hours ago, minutes ago and every second that counts. The past will not weigh you
+            down anymore even in your weakest moments. No tears today definetly not for those who do not deserve you. It is your day.
+            HAPPY BIRTHDAY.
+
          </p>
 
     </div>
+    <!-- ===== Carousel Slideshow ADDITION ===== -->
+<div class="carousel">
+    <button class="nav left" onclick="move(-1)">❮</button>
+
+    <div class="carousel-track">
+        <img src="images/pic1.jpg" class="slide active" alt="Image 1">
+        <img src="images/pic6.PNG" class="slide" alt="Image 2">
+        <img src="images/pic7.JPG" class="slide" alt="Image 3">
+        <img src="images/pic8.JPG" class="slide" alt="Image 4">
+        <img src="images/pic9.JPG" class="slide" alt="Image 5">
+        <img src="images/pic10.JPG" class="slide" alt="Image 6">
+        <img src="images/pic11.JPG" class="slide" alt="Image 7">
+        <img src="images/pic12.JPG" class="slide" alt="Image 8">
+        <img src="images/pic13.JPG" class="slide" alt="Image 9">
+        <img src="images/pic14.JPG" class="slide" alt="Image 10">
+        <img src="images/pic15.JPG" class="slide" alt="Image 11">
+        <img src="images/pic16.JPG" class="slide" alt="Image 12">
+        <img src="images/pic17.JPG" class="slide" alt="Image 13">
+        <img src="images/pic18.JPG" class="slide" alt="Image 14">
+        <img src="images/pic19.PNG" class="slide" alt="Image 15">
+        <img src="images/pic20.PNG" class="slide" alt="Image 16">
+        <img src="images/pic21.PNG" class="slide" alt="Image 17">
+        <img src="images/pic22.PNG" class="slide" alt="Image 18">
+        <img src="images/pic23.PNG" class="slide" alt="Image 19">
+        <img src="images/pic24.PNG" class="slide" alt="Image 20">
+        <img src="images/pic25.PNG" class="slide" alt="Image 21">
+        <img src="images/pic26.PNG" class="slide" alt="Image 22">
+        <img src="images/pic27.PNG" class="slide" alt="Image 23">
+        <img src="images/pic28.PNG" class="slide" alt="Image 24">
+        <img src="images/pic29.PNG" class="slide active" alt="Image 25">
+    </div>
+
+    <button class="nav right" onclick="move(1)">❯</button>
+</div>
+<!-- ===== End Carousel ===== -->
     <script>
         const text = "";
         const messageE1 = document.getElementById("message");
@@ -138,7 +252,7 @@
     const container = document.getElementById("heart-container");
     const heart = document.createElement("div");
     heart.className = "heart";
-    heart.innerText = "❤";
+    heart.innerText = "💜";
 
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = (20 + Math.random() * 20) + "px";
@@ -149,7 +263,35 @@
         heart.remove();
     }, 10000);
 }
+/* ===== Carousel Slideshow ADDITION ===== */
+let slideIndex = 0;
 
+function initCarousel() {
+    const slides = document.querySelectorAll('.slide');
+
+    function updateSlides() {
+        slides.forEach((slide, i) => {
+            slide.className = 'slide hidden';
+
+            if (i === slideIndex) {
+                slide.className = 'slide active';
+            } else if (i === (slideIndex - 1 + slides.length) % slides.length) {
+                slide.className = 'slide left';
+            } else if (i === (slideIndex + 1) % slides.length) {
+                slide.className = 'slide right';
+            }
+        });
+    }
+
+    window.move = function(direction) {
+        slideIndex = (slideIndex + direction + slides.length) % slides.length;
+        updateSlides();
+    }
+
+    updateSlides();
+}
+
+window.addEventListener("load", initCarousel);
     </script>
 </body>
 </html>
